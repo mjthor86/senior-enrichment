@@ -1,0 +1,166 @@
+/*
+IMPORTED GOOGLE FONTS
+
+font-family: 'VT323', monospace;
+font-family: 'Audiowide', cursive;
+font-family: 'Questrial', sans-serif;
+*/
+.navbar {
+  background-color: rgba(41, 43, 44, 0.7)!important;
+}
+
+.navbar-toggler {
+  margin-top: 12px;
+}
+
+.navbar-brand {
+  font-size: 35px;
+  font-family: 'VT323', monospace;
+}
+
+.nav-link {
+  font-family: 'Audiowide', cursive;
+}
+
+.founder {
+  border-radius: 10px;
+}
+
+body {
+  /*padding-top: 20px;*/
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+  background-image: url('background.jpg');
+}
+
+.home {
+  color: white;
+}
+
+.home h1 {
+  font-size: 55px;
+  font-family: 'VT323', monospace;
+}
+
+.home h2 {
+  font-size: 25px;
+  font-family: 'VT323', monospace;
+}
+
+.about {
+  font-family: 'Questrial', sans-serif;
+  font-size: 16px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.campus-item {
+  color: white;
+  background-color: rgba(87, 87, 87, 0.7);
+  width: 200px;
+  height: 200px;
+  margin: 15px;
+  padding: 10px;
+}
+
+.campus-item:hover {
+  background-color: rgba(64, 39, 95, 0.7);
+}
+
+.thumbnail {
+  position: relative;
+}
+
+.caption {
+  font-size: 35px;
+  font-family: 'Questrial', sans-serif;
+  /* text-decoration: none; */
+  text-shadow: -2px 0 #40275F, 0 2px #40275F, 2px 0 #40275F, 0 -2px #40275F;
+  color: white;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+}
+
+.student-item {
+  background-color: rgba(87, 87, 87, 0.7);
+  width: 300px;
+  margin: 20px;
+  font-size: 13px;
+  font-family: 'Questrial', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.student-detail {
+  padding-top: 10px;
+  background-color: rgba(87, 87, 87, 0.7);
+  width: 70%;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 13px;
+  font-family: 'Questrial', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.delete-button {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.student-item h2 {
+  font-family: 'Audiowide', cursive;
+  font-size: 17px;
+  color: white;
+}
+
+.student-item h5 {
+  font-size: 15px;
+  font-family: 'Questrial', sans-serif;
+  color: white;
+}
+
+.student-detail h2 {
+  font-family: 'Audiowide', cursive;
+  font-size: 17px;
+  color: white;
+}
+
+.student-detail h5 {
+  font-size: 15px;
+  font-family: 'Questrial', sans-serif;
+  color: white;
+}
+
+.student-link {
+  text-decoration: none;
+  color: white;
+}
+
+.campus-detail h1 {
+  color: white;
+  font-size: 55px;
+  font-family: 'VT323', monospace;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.footer {
+  font-size: 12px;
+  font-family: 'Audiowide', cursive;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: rgba(41, 43, 44, 0.7);
+}
