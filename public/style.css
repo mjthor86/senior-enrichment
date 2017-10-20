@@ -137,15 +137,31 @@ body {
   color: white;
 }
 
+.student-detail-container {
+  text-align: center;
+}
+
 .student-link {
   text-decoration: none;
   color: white;
+}
+
+.campus-list {
+  text-align: center;
 }
 
 .campus-detail h1 {
   color: white;
   font-size: 55px;
   font-family: 'VT323', monospace;
+}
+
+.campus-detail {
+  text-align: center;
+}
+
+button {
+  margin: 10px;
 }
 
 html {

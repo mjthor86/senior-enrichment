@@ -1,43 +1,48 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addCampus } from '../../redux/';
 import CampusItem from './CampusItem';
+import NewCampus from './NewCampus';
 import history from '../../history';
 
 /* -----------------    COMPONENT     ------------------ */
 
-const CampusList = props => {
-  return (
-    <div className="container">
-      <div className="d-flex justify-content-around align-items-center flex-wrap row">
-        {props.campuses.map(campus =>
-          (
-            <CampusItem key={campus.id} campus={campus} />
-          )
-        )}
-      </div>
-      <br />
-      <br />
-      <div className="row student-detail align-items-center">
-        <div className="col-12">
-          <form onSubmit={props.handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">CREATE NEW CAMPUS</label>
-              <input className="form-control" type="text" name="campusName" placeholder="name" />
-            </div>
-            <div className="form-group">
-              <input className="form-control" type="text" name="campusImage" placeholder="image" />
-            </div>
-            <div className="form-group">
-              <button type="submit" className="btn btn-default">CREATE</button>
-            </div>
-          </form>
+class CampusList extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showForm: false
+    };
+  }
+
+  handleClick = event => {
+    this.state.showForm ?
+      this.setState({ showForm: false }) :
+      this.setState({ showForm: true });
+  }
+
+  render() {
+    return (
+      <div className="container campus-list">
+        <button
+          onClick={this.handleClick}
+          type="submit"
+          className="btn btn-default">ADD CAMPUS</button>
+        {this.state.showForm &&
+          (<NewCampus handleSubmit={this.props.handleCampusSubmit} />)}
+        <div className="d-flex justify-content-around align-items-center flex-wrap row">
+          {this.props.campuses.map(campus =>
+            (
+              <CampusItem key={campus.id} campus={campus} />
+            )
+          )}
         </div>
+        <br />
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 /* -----------------    CONTAINER     ------------------ */
 
@@ -60,5 +65,5 @@ const mapDispatch = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapState, mapDispatch)(CampusList);
+export default withRouter(connect(mapState, mapDispatch)(CampusList));
 

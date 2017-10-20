@@ -31,7 +31,7 @@ router.put('/:id', async (req, res, next) => {
   catch (err) { next(); }
 
   campus.update(req.body);
-  res.sendStatus(202);
+  res.status(202).json(campus);
 });
 
 // DELETE /api/campus/:id => delete campus by id

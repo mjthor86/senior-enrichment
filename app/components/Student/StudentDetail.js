@@ -5,63 +5,66 @@ import _ from 'lodash';
 import history from '../../history';
 import { removeStudent, updateStudent } from '../../redux/students';
 import { removeCampus } from '../../redux/campuses';
+import StudentEdit from './StudentEdit';
 
 /* -----------------    COMPONENT     ------------------ */
 
-const StudentDetail = props => {
-  const student = props.student;
+class StudentDetail extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      showForm: false
+    };
+  }
 
-  if (!props.student) return <div />;
-  return (
-    <div className="container student-detail-container">
-      <div className="row student-detail align-items-center">
-        <div className="col-2">
-          <img className="d-flex align-self-center mr-3" height="50" width="50" src={student.photo} />
-        </div>
-        <div className="col-8">
-          <NavLink
-            activeClassName="active student-link"
-            to={`/students/${student.id}`}>
-            <h2 className="student-name">{student.name}</h2>
-            <h5>{student.email}</h5>
-          </NavLink>
-          <NavLink
-            activeClassName="active"
-            to={`/campuses/${student.campusId}`}>
-            <h5>Campus: {student.campusId}</h5>
-          </NavLink>
-        </div>
-        <div className="col-2">
-          <button
-            className="btn btn-default"
-            onClick={props.removeStudentCallback}>
-            <span className="fa fa-remove" />
-          </button>
-        </div>
-      </div>
-      <div className="row student-detail align-items-center">
-        <div className="col-12">
-          <form onSubmit={props.handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">UPDATE STUDENT INFO</label>
-              <input className="form-control" type="text" name="studentName" placeholder="name" />
-            </div>
-            <div className="form-group">
-              <input className="form-control" type="text" name="studentEmail" placeholder="email" />
-            </div>
-            <div className="form-group">
-              <input className="form-control" type="text" name="studentCampus" placeholder="campus" />
-            </div>
-            <div className="form-group">
-              <button type="submit" className="btn btn-default">UPDATE</button>
-            </div>
-          </form>
-        </div>
-      </div>
+  handleClick = event => {
+    this.state.showForm ?
+      this.setState({ showForm: false }) :
+      this.setState({ showForm: true });
+  }
 
-    </div>
-  );
-};
+  render() {
+    const student = this.props.student;
+
+    if (!this.props.student) return <div />;
+    return (
+      <div className="container student-detail-container">
+        <div className="row student-detail align-items-center">
+          <div className="col-2">
+            <img className="d-flex align-self-center mr-3" height="50" width="50" src={student.photo} />
+          </div>
+          <div className="col-8">
+            <NavLink
+              activeClassName="active student-link"
+              to={`/students/${student.id}`}>
+              <h2 className="student-name">{student.name}</h2>
+              <h5>{student.email}</h5>
+            </NavLink>
+            <NavLink
+              activeClassName="active"
+              to={`/campuses/${student.campusId}`}>
+              <h5>Campus: {student.campusId}</h5>
+            </NavLink>
+          </div>
+          <div className="col-2">
+            <button
+              className="btn btn-default"
+              onClick={this.props.removeStudentCallback}>
+              <span className="fa fa-remove" />
+            </button>
+          </div>
+        </div>
+            <button
+              onClick={this.handleClick}
+              type="submit"
+              className="btn btn-default">EDIT STUDENT INFO</button>
+        {this.state.showForm &&
+          (<StudentEdit handleSubmit={this.props.handleSubmit} />)}
+      </div>
+    );
+  }
+  // handleChange={this.handleChange}
+}
 
 /* -----------------    CONTAINER     ------------------ */
 
