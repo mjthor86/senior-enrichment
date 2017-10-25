@@ -50,7 +50,7 @@ const mapState = ({ campuses }) => ({ campuses });
 
 const mapDispatch = (dispatch, ownProps) => {
   return {
-    handleSubmit(event) {
+    handleCampusSubmit(event) {
       event.preventDefault();
       const newCampus = {
         name: event.target.campusName.value,
