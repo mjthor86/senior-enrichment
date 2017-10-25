@@ -30,6 +30,6 @@ if (module === require.main) {
     .then(() => {
       console.log('db synced');
       app.listen(process.env.PORT || PORT,
-        () => console.log(`server listening on port ${PORT}`));
+        () => console.log(`server listening on port ${process.env.PORT || PORT}`));
     });
 }
