@@ -10,6 +10,7 @@
     "test": "mocha **/*.test.js *.test.js",
     "build": "webpack",
     "build-watch": "webpack -w",
+    "build-production": "webpack -p",
     "start": "node server/start.js",
     "start-dev": "nodemon server/start.js",
     "seed": "node seed"

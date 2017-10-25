@@ -83,9 +83,9 @@ const mapDispatch = (dispatch, ownProps) => {
     handleSubmit(event) {
       event.preventDefault();
       const newStudent = {
-        name: event.target.studentName.value,
-        email: event.target.studentEmail.value,
-        campusId: Number(event.target.studentCampus.value),
+        name: event.target.name.value,
+        email: event.target.email.value,
+        campusId: Number(event.target.campusId.value),
       };
 
       dispatch(updateStudent(ownProps.match.params.id, newStudent));
