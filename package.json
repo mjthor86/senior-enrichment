@@ -40,14 +40,14 @@
     "redux-logger": "^2.10.2",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.5.5",
-    "sequelize": "^4.7.4"
-  },
-  "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "sequelize": "^4.7.4"
+  },
+  "devDependencies": {
     "volleyball": "^1.4.1"
   }
 }
