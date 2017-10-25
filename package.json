@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A review time project",
   "main": "index.js",
+  "engines": {
+    "node": "8.6.0"
+  },
   "scripts": {
     "test": "mocha **/*.test.js *.test.js",
     "build": "webpack",
