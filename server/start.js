@@ -29,6 +29,7 @@ if (module === require.main) {
   db.sync()
     .then(() => {
       console.log('db synced');
-      app.listen(PORT, () => console.log(`server listening on port ${PORT}`));
+      app.listen(process.env.PORT || PORT,
+        () => console.log(`server listening on port ${PORT}`));
     });
 }
